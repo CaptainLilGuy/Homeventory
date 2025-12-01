@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>My Households</h2>
+
+<ul>
+    {% for house in households %}
+        <li>{{ house.household_name }}</li>
+    {% empty %}
+        <li>You are not part of any household yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

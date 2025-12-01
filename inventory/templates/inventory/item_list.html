@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="m-2">Current Household: {{ household.household_name }}</h1>
+<a class="btn btn-primary m-4" href="/inventory/create/">Add Item</a>
+<div class="col-md-8 mx-auto">
+    <div class="card shadow-sm m-2">
+    <div class="card-body">
+        <h2 class="card-title">Item Lists</h2>
+        <ul class="list-group list-group-flush">
+        {% for item in items %}
+            <!-- <li class="list-group-item"><a href="{% url 'item_detail' item.item_id %}">{{ item.item_name }}</a> ({{ item.quantity }})</li> -->
+            <a href="{% url 'item_detail' item.item_id %}" class="text-decoration-none text-dark">
+                <div class="card p-3 mb-4 shadow-sm">
+                    <h5 class="card-title">{{ item.item_name }}</h5>
+                    <p class="card-text">Qty: {{ item.quantity }}</p>
+
+                    <div class="d-flex flex-wrap gap-1 mt-auto">
+                        {% if item.tags %}
+                            {% for tag in item.tags.all %}
+                                <span class="badge tag-info">{{ tag.tag_name }}</span>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </a>
+
+
+        {% empty %}
+            <li class="list-group-item">No items yet</li>
+        {% endfor %}
+        </ul>
+    </div>
+</div>
+</div>
+{% endblock %}

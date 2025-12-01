@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-header">
+            <h2 class="text-muted">ITEM ID: {{ item.item_id }}</h2>
+        </div>
+        <div class="card-body">
+            <button class="btn btn-secondary" onclick="window.history.back()">⬅ Back</button>
+            <h2>{{ item.item_name }}</h2>
+            <p>Quantity: {{ item.quantity }}</p>
+            <p>Price: {{ item.item_price }}</p>
+            <p>Category: {{ item.category }}</p>
+            <p>Tags:
+                {% for tag in item.tags.all %}
+                {{ tag.tag_name }}{% if not forloop.last %}, {% endif %}
+                {% empty %}
+                    <span class="text-muted">No tags</span>
+                {% endfor %}
+            </p>
+            <p>Note: {{ item.note }}</p>
+            <a href="{% url 'item_edit' item.item_id %}">Edit</a> |
+            <a href="{% url 'item_delete' item.item_id %}">Delete</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

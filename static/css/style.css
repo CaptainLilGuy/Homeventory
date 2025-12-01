@@ -1,0 +1,55 @@
+/* Make spacing consistent */
+body {
+    background-color: #f8f9fa;
+}
+
+li .list-group-item {
+    list-style-type: none;
+}
+
+/* Card smoothing */
+.card {
+    border-radius: 12px;
+}
+
+/* Navbar brand styling */
+.navbar-brand {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Override Bootstrap primary color (optional) */
+:root {
+    --bs-primary: #00B8D9;
+    --bs-secondary: #4C6FFF;
+    --bs-info: #0fb939;
+} 
+
+.bg-primary{
+    background-color: var(--bs-primary) !important;
+}
+
+.bg-secondary{
+    background-color: var(--bs-secondary) !important;
+}
+
+.badge.tag-info {
+    background-color: #0fb939 !important;
+}
+
+.btn-primary{
+    background-color: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+}
+
+/* Tables */
+.table thead {
+    background: #f1f3f5;
+    font-weight: 600;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+

@@ -10,3 +10,5 @@ In the future, i plan to furnish the app even more, add a REST API gateaway as w
 If you who are reading this is interested to download and test this app, for installation i do not have anything specific other than to install django and to use a venv when installing. I have not list a step - by - step guide on how to install it yet, as there also might be some more stuffs that i will add like for example REST api to connect to a mobile version of the app. In the meantime, you can refer to this video on how to install it, as this video is the reference i used when setting up the project in the first place.
 
 https://www.youtube.com/watch?v=rHux0gMZ3Eg&t=1444s
+
+If you have any questions regarding the app, you can contact me through my discord @captainlilguy :)

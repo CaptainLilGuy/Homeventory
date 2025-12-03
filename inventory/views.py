@@ -5,6 +5,7 @@ from django.utils import timezone
 from django.db.models import Max
 from django.contrib.auth.decorators import login_required
 from account.models import Household
+from django.contrib import messages
 
 def get_user_households(user):
     return Household.objects.filter(
@@ -56,6 +57,7 @@ def item_create(request):
         item.save()
 
         form.save_m2m()
+        messages.success(request, "Item created successfully!")
         return redirect('inventory_list')
     return render(request, 'inventory/item_form.html', {'form': form})
 
@@ -67,6 +69,7 @@ def item_edit(request, pk):
         item = form.save(commit=False) 
         item.save()
         form.save_m2m()
+        messages.info(request, "Item updated successfully!")
         return redirect('inventory_list')
     return render(request, 'inventory/item_form.html', {'form': form})
 
@@ -75,6 +78,7 @@ def item_delete(request, pk):
     item = get_object_or_404(Inventory, pk=pk)
     if request.method == 'POST':
         item.delete()
+        messages.warning(request, "Item deleted successfully!")
         return redirect('inventory_list')
     return render(request, 'inventory/item_confirm_delete.html', {'item': item})
 

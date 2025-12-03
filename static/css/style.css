@@ -42,9 +42,21 @@ li .list-group-item {
     border-color: var(--bs-primary) !important;
 }
 
-.scrollable-card {
+.scrollable-card-600 {
+    max-height: 600px;
     overflow-y: auto;
-    padding-right: 10px; /* optional – prevents cutoff */
+    padding-bottom: 10px;
+}
+
+.scrollable-card-200 {
+    max-height: 200px;
+    overflow-y: auto;
+    padding-bottom: 10px;
+}
+
+.card-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 /* Tables */

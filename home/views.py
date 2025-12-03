@@ -21,12 +21,12 @@ def index(request):
     soon_expiring = Inventory.objects.filter(
         household=household,
         expiry_date__lte=timezone.now() + timedelta(days=7)
-        )
+        ).order_by('expiry_date')
     
     low_stock = Inventory.objects.filter(
         household=household,
         quantity__lte=3
-        )
+        ).order_by('quantity')
     
     return render(request, 'home/index.html', {
         'soon_expiring': soon_expiring,

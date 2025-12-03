@@ -42,6 +42,11 @@ li .list-group-item {
     border-color: var(--bs-primary) !important;
 }
 
+.scrollable-card {
+    overflow-y: auto;
+    padding-right: 10px; /* optional – prevents cutoff */
+}
+
 /* Tables */
 .table thead {
     background: #f1f3f5;
